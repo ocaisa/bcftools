@@ -18,7 +18,7 @@ jobs:
           - ubuntu-24.04-arm
           - ubuntu-24.04
     steps:
-    - uses: actions/v4
+    - uses: actions/checkout@v4
     - uses: eessi/github-action-eessi@v3
     - name: Test EESSI
       run: |
