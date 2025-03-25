@@ -1,4 +1,4 @@
-name: ubuntu-minimal_usage
+name: Build BCFtools on x86 and Arm
 on:
   workflow_dispatch:  # Allows manual triggering
   push:

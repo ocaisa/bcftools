@@ -5,5 +5,5 @@ build:
   stage: build
   script:
     - module load EESSI-extend
-    - eb --software-commit $CI_COMMIT_SHA easybuild/BCFtools-devel-GCC-13.2.0.eb 
+    - eb --allow-use-as-root-and-accept-consequences --software-commit $CI_COMMIT_SHA easybuild/BCFtools-devel-GCC-13.2.0.eb 
 
