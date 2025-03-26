@@ -1,4 +1,4 @@
-image: rockylinux:latest
+image: rockylinux:9
 
 include:
   - component: $CI_SERVER_FQDN/eessi/gitlab-eessi/eessi@1.0.5
