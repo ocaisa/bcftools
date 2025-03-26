@@ -1,8 +1,9 @@
+image: ubuntu:latest
+
 include:
   - component: $CI_SERVER_FQDN/eessi/gitlab-eessi/eessi@1.0.5
 
 build:
-  image: ubuntu:latest
   stage: build
   script:
     - mkdir -p /tmp/easybuild
