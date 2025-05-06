@@ -1,0 +1,28 @@
+name: Build with Environment Modules dependencies
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-24.04-arm
+          - ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: eessi/github-action-eessi@v3
+      - name: Load modules and build
+        shell: bash
+        run: |
+          module load HTSlib/1.18-GCC-12.3.0 GSL/2.7-GCC-12.3.0
+          autoreconf -Wno-syntax
+          ./configure --with-htslib=$EBROOTHTSLIB --enable-libgsl
+          make
+          # Make sure the binary can execute
+          LD_LIBRARY_PATH=$LIBRARY_PATH ./bcftools --version
