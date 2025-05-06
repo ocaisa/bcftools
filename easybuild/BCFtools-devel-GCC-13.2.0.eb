@@ -37,7 +37,7 @@ dependencies = [
     ('GSL', '2.7'),
 ]
 
-preconfigopts = "autoheader && autoconf -Wno-syntax && "
+preconfigopts = "autoreconf -Wno-syntax && "
 configopts = "--with-htslib=$EBROOTHTSLIB --enable-libgsl"
 
 sanity_check_paths = {
