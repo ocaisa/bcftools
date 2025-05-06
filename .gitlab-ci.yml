@@ -1,10 +1,9 @@
 include:
-  - component: $CI_SERVER_FQDN/eessi/gitlab-eessi/eessi@1.0.5
+  - component: $CI_SERVER_FQDN/eessi/gitlab-eessi/eessi@1.0.11
 
 build:
   stage: build
   script:
-    - mkdir -p /tmp/easybuild
-    - EESSI_USER_INSTALL=/tmp/easybuild module load EESSI-extend
-    - eb --allow-use-as-root-and-accept-consequences --software-commit $CI_COMMIT_SHA easybuild/BCFtools-devel-GCC-13.2.0.eb 
+    - module load EESSI-extend
+    - eb --software-commit $CI_COMMIT_SHA easybuild/BCFtools-devel-GCC-13.2.0.eb 
 
